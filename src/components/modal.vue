@@ -2,8 +2,14 @@
   <transition name="modal" appear>
     <div class="overlay" v-on:click.self="toggleModal">
       <div class="modalWindow">
-        <input v-model="plans" class="form plans" />
-        <input type="submit" value="送信" v-on:click.self="toggleModal" />
+        <ol id="forms">
+          <li>
+            <input v-model="plans" class="form plans" />
+          </li>
+          <li>
+            <input type="submit" value="送信" v-on:click.self="toggleModal" />
+          </li>
+        </ol>
       </div>
     </div>
   </transition>
@@ -55,25 +61,17 @@ export default {
 }
 
 .modal-enter,
-.modal-leave {
+.modal-leave-to {
   opacity: 0;
 }
 
 .modal-enter-to,
-.modal-leave-to {
+.modal-leave {
   opacity: 1;
 }
-.modal-enter-active > .modalWindow,
-.modal-leave-active > .modalWindow {
-  transition: transform 0.5s;
-}
 
-.modal-enter > .modalWindow {
-  transform: translateY(-20px);
-}
-
-.modal-leave > .modalWindow {
-  transform: translateY(-20px);
+#forms {
+  list-style: none;
 }
 
 .form {
