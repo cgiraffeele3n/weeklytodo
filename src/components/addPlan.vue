@@ -1,8 +1,7 @@
 <template>
   <div>
-    {{ plans }}
-    <span class="addButton" v-on:click="toggleModal">+</span>
-    <modal v-if="show" @togglemodal="toggleModal" />
+    <span class="addButton" @click="toggleModal">+</span>
+    <modal v-if="show" @togglemodal="toggleModal" @submitplans="submitPlans" />
   </div>
 </template>
 
@@ -20,6 +19,9 @@ export default {
   methods: {
     toggleModal: function() {
       this.show = !this.show;
+    },
+    submitPlans: function(plans) {
+      console.log(plans);
     }
   }
 };

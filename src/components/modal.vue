@@ -7,7 +7,7 @@
             <input v-model="plans" class="form plans" />
           </li>
           <li>
-            <input type="submit" value="送信" v-on:click.self="toggleModal" />
+            <input type="button" value="送信" v-on:click.self="submitPlans" />
           </li>
         </ol>
       </div>
@@ -24,6 +24,10 @@ export default {
   },
   methods: {
     toggleModal: function() {
+      this.$emit("togglemodal");
+    },
+    submitPlans: function() {
+      this.$emit("submitplans", this.plans);
       this.$emit("togglemodal");
     }
   }
