@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <week />
+    <TodoWeek />
   </div>
 </template>
 
 <script>
-import week from "./components/week.vue";
+import TodoWeek from "./components/TodoWeek.vue";
 
 export default {
   name: "App",
   components: {
-    week
+    TodoWeek
   }
 };
 </script>

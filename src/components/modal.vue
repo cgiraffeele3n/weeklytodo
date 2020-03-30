@@ -1,6 +1,6 @@
 <template>
   <transition name="modal" appear>
-    <div class="overlay" v-on:click.self="toggleModal">
+    <div class="overlay">
       <div class="modalWindow">
         <ol id="forms">
           <li>
@@ -29,6 +29,9 @@ export default {
     submitPlans() {
       this.$emit("submitplans", this.plans);
       this.$emit("togglemodal");
+    },
+    nop() {
+      //NOP
     }
   }
 };

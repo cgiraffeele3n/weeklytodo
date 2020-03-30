@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <span class="addButton" @click="toggleModal">+</span>
+  <div @click="toggleModal">
+    <span class="mark">{{ day}}</span>
+    <span class="yobi">{{ yobi }}</span>
     <modal v-if="show" @togglemodal="toggleModal" @submitplans="submitPlans" />
   </div>
 </template>
@@ -23,9 +24,22 @@ export default {
     submitPlans(plans) {
       console.log(plans);
     }
-  }
+  },
+  props: ["day", "yobi"]
 };
 </script>
 
+
 <style>
+.day {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.yobi {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
 </style>

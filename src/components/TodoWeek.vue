@@ -1,6 +1,6 @@
 <template>
   <div id="weekly">
-    <day
+    <TodoDay
       v-for="(value, key) in weekly"
       :key="key"
       class="week"
@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import day from "./day.vue";
+import TodoDay from "./TodoDay.vue";
 export default {
   components: {
-    day
+    TodoDay
   },
   data() {
     return {
