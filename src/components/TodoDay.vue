@@ -1,5 +1,5 @@
 <template>
-  <div @click="toggleModal">
+  <div @click.self="toggleModal">
     <span class="mark">{{ day}}</span>
     <span class="yobi">{{ yobi }}</span>
     <modal v-if="show" @togglemodal="toggleModal" @submitplans="submitPlans" />

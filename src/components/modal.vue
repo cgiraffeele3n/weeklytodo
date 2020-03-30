@@ -1,13 +1,13 @@
 <template>
   <transition name="modal" appear>
-    <div class="overlay">
+    <div class="overlay" v-on:click.self="toggleModal">
       <div class="modalWindow">
         <ol id="forms">
           <li>
             <input v-model="plans" class="form plans" />
           </li>
           <li>
-            <input type="button" value="送信" v-on:click.self="submitPlans" />
+            <input type="button" value="送信" v-on:click="submitPlans" />
           </li>
         </ol>
       </div>
@@ -29,9 +29,6 @@ export default {
     submitPlans() {
       this.$emit("submitplans", this.plans);
       this.$emit("togglemodal");
-    },
-    nop() {
-      //NOP
     }
   }
 };
