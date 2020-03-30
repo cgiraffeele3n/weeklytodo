@@ -23,10 +23,10 @@ export default {
     };
   },
   methods: {
-    toggleModal: function() {
+    toggleModal() {
       this.$emit("togglemodal");
     },
-    submitPlans: function() {
+    submitPlans() {
       this.$emit("submitplans", this.plans);
       this.$emit("togglemodal");
     }

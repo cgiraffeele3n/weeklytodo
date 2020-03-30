@@ -17,10 +17,10 @@ export default {
     };
   },
   methods: {
-    toggleModal: function() {
+    toggleModal() {
       this.show = !this.show;
     },
-    submitPlans: function(plans) {
+    submitPlans(plans) {
       console.log(plans);
     }
   }
@@ -28,17 +28,4 @@ export default {
 </script>
 
 <style>
-.addButton {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: inline-block;
-  line-height: 50px;
-  text-align: center;
-  background-color: #cccccc;
-  position: absolute;
-  margin: auto;
-  right: 10px;
-  bottom: 10px;
-}
 </style>

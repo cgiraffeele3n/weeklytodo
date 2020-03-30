@@ -1,29 +1,19 @@
 <template>
   <div id="app">
-    <div id="header"></div>
-    <todo />
-    <addplan />
+    <week />
   </div>
 </template>
 
 <script>
-import todo from "./components/todo.vue";
-import addplan from "./components/addPlan.vue";
+import week from "./components/week.vue";
 
 export default {
   name: "App",
   components: {
-    todo,
-    addplan
+    week
   }
 };
 </script>
 
 <style>
-#header {
-  width: 100%;
-  height: 50px;
-  margin-bottom: 10px;
-  background-color: #aaffcc;
-}
 </style>
