@@ -1,8 +1,16 @@
 <template>
-  <div @click.self="toggleModal">
-    <span class="mark">{{ day}}</span>
+  <div @click.self="showModal()">
+    <span class="mark">{{ day }}</span>
     <span class="yobi">{{ yobi }}</span>
-    <modal v-if="show" @togglemodal="toggleModal" @submitplans="submitPlans" />
+
+    <p>{{ plans }}</p>
+    <modal
+      v-if="show"
+      @closemodal="closeModal"
+      @submitplans="submitPlans"
+      v-bind:day="day"
+      v-bind:yobi="yobi"
+    />
   </div>
 </template>
 
@@ -14,15 +22,19 @@ export default {
   },
   data() {
     return {
-      show: false
+      show: false,
+      plans: ""
     };
   },
   methods: {
-    toggleModal() {
-      this.show = !this.show;
+    showModal() {
+      this.show = true;
+    },
+    closeModal() {
+      this.show = false;
     },
     submitPlans(plans) {
-      console.log(plans);
+      this.plans = plans;
     }
   },
   props: ["day", "yobi"]

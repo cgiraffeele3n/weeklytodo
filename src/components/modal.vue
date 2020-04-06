@@ -1,7 +1,9 @@
 <template>
   <transition name="modal" appear>
-    <div class="overlay" v-on:click.self="toggleModal">
+    <div class="overlay" v-on:click.self="closeModal">
       <div class="modalWindow">
+        <span class="mark">{{ day }}</span>
+        <span class="yobi">{{ yobi }}</span>
         <ol id="forms">
           <li>
             <input v-model="plans" class="form plans" />
@@ -23,18 +25,30 @@ export default {
     };
   },
   methods: {
-    toggleModal() {
-      this.$emit("togglemodal");
+    closeModal() {
+      this.$emit("closemodal");
     },
     submitPlans() {
       this.$emit("submitplans", this.plans);
-      this.$emit("togglemodal");
+      this.$emit("closemodal");
     }
-  }
+  },
+  props: ["day", "yobi"]
 };
 </script>
 
 <style>
+.day {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.yobi {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
 .modalWindow {
   display: flex;
   align-items: center;

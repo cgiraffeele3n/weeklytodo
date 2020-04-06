@@ -4,7 +4,6 @@
       v-for="(value, key) in weekly"
       :key="key"
       class="week"
-      @click="addplan(value.day,value.yobi)"
       v-bind:day="value.day"
       v-bind:yobi="value.yobi"
     />
@@ -41,12 +40,7 @@ export default {
 
     this.weekly = thisWeek;
   },
-  methods: {
-    addplan(day, yobi) {
-      console.log(day);
-      console.log(yobi);
-    }
-  }
+  methods: {}
 };
 </script>
 
