@@ -1,9 +1,9 @@
 <template>
   <div @click.self="showModal()">
-    <span class="mark">{{ day }}</span>
-    <span class="yobi">{{ yobi }}</span>
+    <span class="mid">{{ day }}</span>
+    <span class="mid">{{ yobi }}</span>
 
-    <p>{{ plans }}</p>
+    <todoplans v-bind:plans="value" v-for="(value,key) in plans" :key="key" />
     <modal
       v-if="show"
       @closemodal="closeModal"
@@ -16,14 +16,16 @@
 
 <script>
 import modal from "./modal.vue";
+import todoplans from "./TodoPlans.vue";
 export default {
   components: {
-    modal
+    modal,
+    todoplans
   },
   data() {
     return {
       show: false,
-      plans: ""
+      plans: []
     };
   },
   methods: {
@@ -34,7 +36,7 @@ export default {
       this.show = false;
     },
     submitPlans(plans) {
-      this.plans = plans;
+      this.plans.push(plans);
     }
   },
   props: ["day", "yobi"]
@@ -42,16 +44,9 @@ export default {
 </script>
 
 
-<style>
-.day {
+<style scoped>
+.mid {
   display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-}
-
-.yobi {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
+  text-align: center;
 }
 </style>

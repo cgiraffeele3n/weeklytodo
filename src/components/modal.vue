@@ -6,7 +6,7 @@
         <span class="yobi">{{ yobi }}</span>
         <ol id="forms">
           <li>
-            <input v-model="plans" class="form plans" />
+            <input v-model="plans" class="form" />
           </li>
           <li>
             <input type="button" value="送信" v-on:click="submitPlans" />
@@ -37,18 +37,7 @@ export default {
 };
 </script>
 
-<style>
-.day {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-}
-
-.yobi {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-}
+<style  scoped>
 .modalWindow {
   display: flex;
   align-items: center;

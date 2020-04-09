@@ -50,7 +50,7 @@ export default {
 }
 .week {
   width: calc(100% / 7);
-  height: 300px;
+  height: 500px;
   background-color: #eeeeee;
   border: 1px solid #000000;
   position: relative;
